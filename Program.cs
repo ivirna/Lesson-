@@ -1,6 +1,22 @@
-﻿int a = 4;
+﻿Console.Clear();
+int max = 0;
+int min = 0;
 
-if (a / a = 1)
+Console.Write("Введите первое число: ");
+int firstNumber = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите второе число: ");
+int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+if(firstNumber > secondNumber)
 {
-Console.Write("Четное");
+    max = firstNumber;
+    min = secondNumber;
 }
+else
+{
+    max = secondNumber;
+    min = firstNumber;
+}
+
+Console.WriteLine("max = " + max + " и " + "min = " + min); 

@@ -1,8 +1,4 @@
-Console.Write("Введите число ");
+int a = 4;
 
-int n = 1, count = 1 * n;
-while (count <= n)
-{
-    Console.Write($"{count} ");
-    count ++; // count = count + 1
-}
+if (a % a = 1);
+Console.Write("Четное");
