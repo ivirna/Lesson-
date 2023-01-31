@@ -1,6 +1,5 @@
 ﻿Console.Clear();
-int max = 0;
-int min = 0;
+int max =0;
 
 Console.Write("Введите первое число: ");
 int firstNumber = Convert.ToInt32(Console.ReadLine());
@@ -8,15 +7,21 @@ int firstNumber = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int secondNumber = Convert.ToInt32(Console.ReadLine());
 
-if(firstNumber > secondNumber)
+Console.Write("Введите третье число: ");
+int thirdNumber = Convert.ToInt32(Console.ReadLine());
+
+if(firstNumber > max)
 {
     max = firstNumber;
-    min = secondNumber;
-}
-else
+} 
+if(secondNumber > max)
 {
     max = secondNumber;
-    min = firstNumber;
+}
+if(thirdNumber > max)
+{
+
+    max = thirdNumber;
 }
 
-Console.WriteLine("max = " + max + " и " + "min = " + min); 
+Console.WriteLine("max = " + max);
