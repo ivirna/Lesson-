@@ -1,27 +1,6 @@
 ﻿Console.Clear();
-int max =0;
-
-Console.Write("Введите первое число: ");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите второе число: ");
-int secondNumber = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите третье число: ");
-int thirdNumber = Convert.ToInt32(Console.ReadLine());
-
-if(firstNumber > max)
-{
-    max = firstNumber;
-} 
-if(secondNumber > max)
-{
-    max = secondNumber;
-}
-if(thirdNumber > max)
-{
-
-    max = thirdNumber;
-}
-
-Console.WriteLine("max = " + max);
+Console.WriteLine("Задача 10 ");
+Console.Write("Введи трехзначное число: ");
+int threeDigitNumber = Convert.ToInt32(Console.ReadLine());
+string stringNumber = Convert.ToString(threeDigitNumber);
+Console.WriteLine("вторая цифра этого числа -> "+stringNumber[1]);
