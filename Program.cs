@@ -1,15 +1,32 @@
-﻿Console.WriteLine("Задача 19");
-Console.Write("Введите число: ");
-string? number = Console.ReadLine();
+﻿Console.WriteLine("Задача 34");
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size];
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+int count = 0;
 
-void CheckingNumber(string number){
-  if (number[0]==number[4] && number[1]==number[3]){
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
-  }
-  else Console.WriteLine($"Ваше число: {number} - НЕ палиндром.");
-}
+for (int z = 0; z < numbers.Length; z++)
+if (numbers[z] % 2 == 0)
+count++;
 
-if (number!.Length == 5){
-  CheckingNumber(number);
+Console.WriteLine($"всего {numbers.Length} чисел, {count} из них чётные");
+
+void FillArrayRandomNumbers(int[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+    {
+        numbers[i] = new Random().Next(100,1000);
+    }
 }
-else Console.WriteLine($"Введи правильное число");
+void PrintArray(int[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+    {
+        Console.Write(numbers[i] + " ");
+    }
+    Console.Write("]");
+    Console.WriteLine();
+}
