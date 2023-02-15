@@ -1,36 +1,25 @@
-﻿Console.WriteLine($"\nЗадача 38");
+﻿Console.WriteLine($"\nЗадача 36");
 Console.WriteLine("Введите размер массива");
 int size = Convert.ToInt32(Console.ReadLine());
-double[] numbers = new double[size];
+int[] numbers = new int[size];
 FillArrayRandomNumbers(numbers);
 Console.WriteLine("Вот наш массив: ");
 PrintArray(numbers);
-double min = Int32.MaxValue;
-double max = Int32.MinValue;
+int sum = 0;
 
-for (int z = 0; z < numbers.Length; z++)
-{
-    if (numbers[z] > max)
-        {
-            max = numbers[z];
-        }
-    if (numbers[z] < min)
-        {
-            min = numbers[z];
-        }
-}
+for (int z = 0; z < numbers.Length; z+=2)
+    sum = sum + numbers[z];
 
-Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
-Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
+    Console.WriteLine($"всего {numbers.Length} чисел, сумма элементов на нечётных позициях = {sum}");
 
-void FillArrayRandomNumbers(double[] numbers)
+void FillArrayRandomNumbers(int[] numbers)
 {
     for(int i = 0; i < numbers.Length; i++)
         {
-            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+            numbers[i] = new Random().Next(1,10);
         }
 }
-void PrintArray(double[] numbers)
+void PrintArray(int[] numbers)
 {
     Console.Write("[ ");
     for(int i = 0; i < numbers.Length; i++)
