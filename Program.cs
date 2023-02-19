@@ -1,63 +1,39 @@
-﻿Console.WriteLine($"\nЗадача 41");
-Console.Write("Введите числа через запятую: ");
-int[] numbers = StringToNum(Console.ReadLine());
-PrintArray(numbers);
-int sum = 0;
-for (int i = 0; i < numbers.Length; i++)
-{
-    if (numbers[i] > 0)
-    {
-        sum++;
-    }
-}
+﻿Console.WriteLine($"\nЗадача 47");
+Console.Write("Введите m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите n: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Clear();
+Console.WriteLine($"m = {m}, n = {n}.");
+
+double[,] array = new double[m, n];
+
+CreateArrayDouble(array);
+
+WriteArray(array);
+
 Console.WriteLine();
-Console.WriteLine($"количество значений больше 0 = {sum}");
 
-
-int[] StringToNum(string input)
+void CreateArrayDouble(double[,] array)
 {
-    int count = 1;
-    for (int i = 0; i < input.Length; i++)
+  for (int i = 0; i < m; i++)
+  {
+    for (int j = 0; j < n; j++)
     {
-        if (input[i] == ',')
-        {
-            count++;
-        }
+      array[i, j] = new Random().NextDouble() * 20 - 10;
     }
-
-    int[] numbers = new int [count];
-    int index = 0;
-
-    for (int i = 0; i < input.Length; i++)
-    {
-        string temp = "";
-
-        while (input [i] != ',')
-        {
-        if(i != input.Length - 1)
-        {
-            temp += input [i].ToString();
-            i++;
-        }
-        else
-        {
-            temp += input [i].ToString();
-            break;
-        }
-        }
-        numbers[index] = Convert.ToInt32(temp);
-        index++;
-    }
-    return numbers;
+  }
 }
 
-
-void PrintArray(int[] array)
-{
-    Console.Write("[ ");
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.Write("]");
+void WriteArray (double[,] array){
+for (int i = 0; i < m; i++)
+  {
+      for (int j = 0; j < n; j++)
+      {
+        double alignNumber = Math.Round(array[i, j], 1);
+        Console.Write(alignNumber + " ");
+      }
+      Console.WriteLine();
+  }
 }
